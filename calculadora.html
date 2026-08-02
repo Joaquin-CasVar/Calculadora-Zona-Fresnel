@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Zona de Fresnel</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body class="container" data-bs-theme="dark">
+  <header class="text-center py-5">
+    <h1>Calculadora de Zona de Fresnel</h1>
+  </header>
+  <main>
+
+    <div class="d-flex justify-content-around my-3 border rounded bg-primary-subtle">
+
+      <section class="col-8 p-4 border-end ">
+        <h4 class="ps-2 border-start border-primary border-2">Datos</h4>
+
+        <form>
+          <div class="row pb-3">
+            <div class="col">
+              <label for="frequencyInput" class="form-label">Frecuencia</label>
+              <div class="input-group">
+                <input type="number" class="form-control" id="frequencyInput" step="0.01" required>
+                <span class="input-group-text">GHz</span>
+              </div>
+              <div class="form-text" id="basic-addon4">Frecuencia de operación del enlace.</div>
+            </div>
+
+            <div class="col">
+              <label for="distanceInput" class="form-label">Distancia</label>
+              <div class="input-group">
+                <input type="number" class="form-control" id="distanceInput" step="0.01" required>
+                <span class="input-group-text">km</span>
+              </div>
+              <div class="form-text" id="basic-addon4">
+                La distancia total entre las dos antenas (distancia en línea recta).
+              </div>
+            </div>
+          </div>
+
+          <div class="row pb-3">
+            <div class="col ">
+              <label for="antenna1HeightInput" class="form-label">Altura Antena 1</label>
+              <div class="input-group">
+                <input type="number" class="form-control" id="antenna1HeightInput" required>
+                <span class="input-group-text">m</span>
+              </div>
+            </div>
+
+            <div class="col ">
+              <label for="antenna2HeightInput" class="form-label">Altura Antena 2</label>
+              <div class="input-group">
+                <input type="number" class="form-control" id="antenna2HeightInput" required>
+                <span class="input-group-text">m</span>
+              </div>
+            </div>
+
+            <div class="form-text" id="basic-addon4">
+              La altura de las antenas sobre el nivel del piso. Incluye la altura de cualquier torre o edificio donde
+              esté montada la antena.
+            </div>
+          </div>
+
+          <div class="row pb-3">
+            <div class="col">
+              <label for="obstructionHeightInput" class="form-label">Altura del Obstaculo</label>
+              <div class="input-group">
+                <input type="number" class="form-control" id="obstructionHeightInput" step="1">
+                <span class="input-group-text">m</span>
+              </div>
+              <div class="form-text" id="basic-addon4">
+                La altura del obstáculo que puede interferir con la trayectoria de la señal. Déjalo vacío si no hay
+                obstáculos presentes.
+              </div>
+            </div>
+
+            <div class="col">
+              <label for="obstructionDistanceInput" class="form-label">Distancia del Obstaculo</label>
+              <div class="input-group">
+                <input type="number" class="form-control" id="obstructionDistanceInput" step="0.01"
+                  placeholder="Punto medio">
+                <span class="input-group-text">km</span>
+              </div>
+              <div class="form-text" id="basic-addon4">
+                La distancia a la que se encuentra el obstaculo de la primera antena. Déjalo en blanco para que se
+                calcule en el punto medio.
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Calcular</button>
+
+        </form>
+      </section>
+
+      <section class="col-4 p-4">
+        <h4 class="ps-2 border-start border-primary border-2">Resultados</h4>
+
+        <div>
+          <p>Radio de la zona a la altura del obstaculo</p>
+          <div>
+            <p class="fs-1 fw-bold border rounded px-3 bg-secondary-subtle" style="height: 4rem;"
+              id="radius"></p>
+          </div>
+        </div>
+
+        <div>
+          <p>Porcentaje del radio obstruido</p>
+          <p class="fs-1 fw-bold border rounded px-3 bg-secondary-subtle" style="height: 4rem;" id="obstPrcnt"></p>
+        </div>
+
+        <div>
+          <p>Calidad de la señal</p>
+          <p class="fs-1 fw-bold border rounded px-3 bg-secondary-subtle" style="height: 4rem;" id="sigInt"></p>
+        </div>
+      </section>
+    </div>
+
+
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
