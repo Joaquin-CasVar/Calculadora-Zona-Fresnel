@@ -82,9 +82,7 @@ const calcularClearance = (a1h, a2h, totalDist, distObst) => {
 }
 
 const calcularObstruccion = (radius, obstacleHeight, dist) => {
-    const floorHeight = (1000 * ((2 * dist) ** 2)) / (8 * 8504)
-
-    const obstruccion = radius + obstacleHeight + floorHeight
+    const obstruccion = radius + obstacleHeight
     return obstruccion
 }
 
